@@ -415,7 +415,7 @@ require('lazy').setup({
       { -- lazy style key map
         '<leader>u',
         '<cmd>Telescope undo<cr>',
-        desc = 'undo history',
+        desc = '[U]ndo history',
       },
     },
     opts = {
