@@ -635,7 +635,7 @@ require('lazy').setup({
           settings = {
             basedpyright = {
               analysis = {
-                typeCheckingMode = 'standard',
+                typeCheckingMode = 'off',
               },
             },
           },
