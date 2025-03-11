@@ -831,6 +831,10 @@ require('lazy').setup({
         --
         -- You can use 'stop_after_first' to run the first available formatter from the list
         javascript = { 'prettierd', stop_after_first = true },
+        typescript = { 'prettierd', stop_after_first = true },
+        html = { 'prettierd', stop_after_first = true },
+        yaml = { 'prettierd', stop_after_first = true },
+        yml = { 'prettierd', stop_after_first = true },
       },
     },
   },
