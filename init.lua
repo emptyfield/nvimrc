@@ -719,14 +719,14 @@ require('lazy').setup({
               -- enabling this conflicts between Kubernetes resources, kustomization.yaml, and Helmreleases
               validate = true,
               schemas = {
-                -- kubernetes = '*.yaml',
+                kubernetes = '*.yaml',
                 -- ['http://json.schemastore.org/github-workflow'] = '.github/workflows/*',
                 -- ['http://json.schemastore.org/github-action'] = '.github/action.{yml,yaml}',
                 -- ['https://raw.githubusercontent.com/microsoft/azure-pipelines-vscode/master/service-schema.json'] = 'azure-pipelines*.{yml,yaml}',
                 -- ['https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/tasks'] = 'roles/tasks/*.{yml,yaml}',
                 -- ['https://raw.githubusercontent.com/ansible/ansible-lint/main/src/ansiblelint/schemas/ansible.json#/$defs/playbook'] = '*play*.{yml,yaml}',
                 -- ['http://json.schemastore.org/prettierrc'] = '.prettierrc.{yml,yaml}',
-                -- ['http://json.schemastore.org/kustomization'] = 'kustomization.{yml,yaml}',
+                ['http://json.schemastore.org/kustomization'] = 'kustomization.{yml,yaml}',
                 -- ['http://json.schemastore.org/chart'] = 'Chart.{yml,yaml}',
                 -- ['https://json.schemastore.org/dependabot-v2'] = '.github/dependabot.{yml,yaml}',
                 -- ['https://gitlab.com/gitlab-org/gitlab/-/raw/master/app/assets/javascripts/editor/schema/ci.json'] = '*gitlab-ci*.{yml,yaml}',
