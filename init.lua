@@ -118,17 +118,31 @@ vim.o.showmode = false
 --   vim.o.clipboard = 'unnamedplus'
 -- end)
 
-vim.g.clipboard = {
-  name = 'WslClipboard',
-  copy = {
-    ['+'] = '/mnt/c/Windows/System32/clip.exe',
-    ['*'] = '/mnt/c/Windows/System32/clip.exe',
-  },
-  paste = {
-    ['+'] = '/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-    ['*'] = '/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
-  },
-}
+if vim.fn.has 'wsl' == 1 then
+  vim.g.clipboard = {
+    name = 'WslClipboard',
+    copy = {
+      ['+'] = '/mnt/c/Windows/System32/clip.exe',
+      ['*'] = '/mnt/c/Windows/System32/clip.exe',
+    },
+    paste = {
+      ['+'] = '/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+      ['*'] = '/mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe -c [Console]::Out.Write($(Get-Clipboard -Raw).tostring().replace("`r", ""))',
+    },
+  }
+else
+  vim.g.clipboard = {
+    name = 'wl-clipboard',
+    copy = {
+      ['+'] = 'wl-copy',
+      ['*'] = 'wl-copy',
+    },
+    paste = {
+      ['+'] = 'wl-paste',
+      ['*'] = 'wl-paste',
+    },
+  }
+end
 
 -- Enable break indent
 vim.o.breakindent = true
